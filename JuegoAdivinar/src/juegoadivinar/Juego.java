@@ -33,13 +33,15 @@ public class Juego {
                 
                 if (num==num2){
                     int respuesta3 = JOptionPane.showConfirmDialog(null, "¡Enhorabuena "+num2+" es el número correcto!"
-                    + "\n¿Deseas continuar intentándolo?");
-                    if(respuesta3 == JOptionPane.YES_OPTION)
-                    JOptionPane.showMessageDialog(null, "¡Empezemos!");
-                    //empezar el programa desde 0
-                    else if(respuesta3 == JOptionPane.NO_OPTION)
-                    JOptionPane.showMessageDialog(null, "¡Hasta otra!");
-                    //salir del programa
+                    + "\n¿Deseas continuar jugando?");
+                    if(respuesta3 == JOptionPane.YES_OPTION){
+                    JOptionPane.showMessageDialog(null, "¡Genial, pues empezemos!");
+                    Juego.this.empezarJuego();
+                    }
+                    else if(respuesta3 == JOptionPane.NO_OPTION) {
+                    JOptionPane.showMessageDialog(null, "¡Hasta otra entonces!");
+                    //terminar programa
+                    }
                 }
                 
                 if (num2>num){
@@ -51,22 +53,31 @@ public class Juego {
             } 
             int respuesta4 = JOptionPane.showConfirmDialog(null, "Lo siento superaste el número de intentos"
                     + "\n¿Deseas continuar intentándolo?");
-                if(respuesta4 == JOptionPane.YES_OPTION)
+                if(respuesta4 == JOptionPane.YES_OPTION){
                     JOptionPane.showMessageDialog(null, "¡Buena suerte esta vez!");
-                //empezar desde cero
-                else if(respuesta4 == JOptionPane.NO_OPTION)
+                    Juego.this.empezarJuego();
+                }
+                else if(respuesta4 == JOptionPane.NO_OPTION){
                     JOptionPane.showMessageDialog(null, "¡Hasta otra!");
-                //salir del programa
-               
+                //acabar programa
+                }
                 
         }
         else {
            respuesta = JOptionPane.showInputDialog(null, "Ese número no es válido, ingrese otro", "Error!", JOptionPane.ERROR_MESSAGE);
             num = Integer.parseInt(respuesta); 
         }
+    } //salir while
+    
+    
+    } //salir metodo
+    
+    public void empezarJuego(){
+        Juego.this.hacerJuego();
     }
     
-    
+    public void acabarJuego(){
+        
     }
 }
 
