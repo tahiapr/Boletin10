@@ -26,7 +26,7 @@ public class Juego {
 
             String intentos = JOptionPane.showInputDialog("¿En cuántos intentos quieres adivinar el número?");
             int numIntentos = Integer.parseInt(intentos); 
-   
+            juego:
             for (int contador=0; contador<=numIntentos; contador++){
                 String respuesta = JOptionPane.showInputDialog("Teclea un número entre 1 y 50");
                 double numU = Integer.parseInt(respuesta);
@@ -47,7 +47,7 @@ public class Juego {
                     }
                     else if(respuesta2 == JOptionPane.NO_OPTION) {
                     JOptionPane.showMessageDialog(null, "¡Hasta otra entonces!");
-                    //terminar programa
+                    break juego;
                     }
                 }
                 
@@ -67,13 +67,15 @@ public class Juego {
             } 
             int respuesta4 = JOptionPane.showConfirmDialog(null, "Lo siento superaste el número de intentos"
                     + "\n¿Deseas continuar intentándolo?");
+                
+                juego2:
                 if(respuesta4 == JOptionPane.YES_OPTION){
                     JOptionPane.showMessageDialog(null, "¡Buena suerte esta vez!");
                     Juego.this.empezarJuego();
                 }
                 else if(respuesta4 == JOptionPane.NO_OPTION){
                     JOptionPane.showMessageDialog(null, "¡Hasta otra!");
-                //acabar programa
+                break juego2;
                 }
                 
         } //final del método
